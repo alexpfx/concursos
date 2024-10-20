@@ -1,10 +1,51 @@
-# Python-generated files
+# Python bytecode
 __pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
+*.py[cod]
+*$py.class
 
-# Virtual environments
-.venv
+# Configurações de ambiente e virtualenv
+.env/
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Arquivos criados por uv
+uv.lock
+.uv/
+
+# Diretórios de cache
+pip-wheel-metadata/
+pip-log.txt
+
+# Log e arquivos temporários
+*.log
+*.tmp
+*.out
+*.swp
+
+# Arquivos de IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos do pytest e cache de testes
+.cache/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.tox/
+
+# Mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
