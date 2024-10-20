@@ -14,8 +14,12 @@ def main():
 	with open(args[1], 'r') as file_respostas:
 		respostas = file_respostas.readlines()[0]
 
+	m = int(args[3]) if len(args) > 3 else len(gabarito)
+	gabarito = gabarito.upper().strip()[:m]
+	respostas = respostas.upper().strip()[:m]
 	lg = len(gabarito)
 	lr = len(respostas)
+	
 	
 	
 	if lg != lr:
@@ -29,13 +33,14 @@ def main():
 		print (f"banca inválida {banca}")
 		sys.exit(1)
 
+	
 
-	r = conferidor.execute(gabarito.upper(), respostas.upper())
+	r = conferidor.execute(gabarito, respostas)
 	print ('Resultado:')
 	print (f'\tRespostas corretas {r.corretas}')
 	print (f'\tRespostas incorretas {r.incorretas}')
 	print (f'\tAnuladas: {r.anuladas}')
-	print (f'\tSem resposta: {lg - (r.corretas + r.incorretas + r.anuladas)}')
+	print (f'\tSem resposta: {m - (r.corretas + r.incorretas + r.anuladas)}')
 	
 	print (f'\tPontuação: {r.pontuacao}')
 

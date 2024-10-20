@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import Tuple
-
+import sys
 
 class Resultado:
 	def __init__(self, corretas, incorretas, anuladas, pontuacao):
@@ -19,6 +19,7 @@ class Conferidor(ABC):
 		e = 0
 		a = 0
 		for i, g in enumerate(gabarito):
+				
 			r = respostas[i]
 
 			if g == 'X':
@@ -29,11 +30,11 @@ class Conferidor(ABC):
 				c += 1
 			else: 
 				e += 1
+				
 
 		return [c, e, a]
 				
 				 
-				
 				
 
 	def execute(self, gabarito, respostas) -> Resultado:
