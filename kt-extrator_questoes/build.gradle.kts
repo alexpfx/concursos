@@ -13,6 +13,7 @@ dependencies {
     testImplementation(kotlin("test"))
 
     implementation("com.github.ajalt.clikt:clikt:5.0.1")
+    implementation ("com.codeborne:selenide:7.5.0")
 
     // optional support for rendering markdown in help messages
     implementation("com.github.ajalt.clikt:clikt-markdown:5.0.1")
