@@ -1,20 +1,13 @@
 package extractor
 
-interface Extractor<in C : IConfig, out R : IResult> {
-    fun extract(config: C): R
+interface Extractor {
+    suspend fun extract(): Result
 }
 
-interface IConfig {
-
-}
-
-interface IResult {
+interface Config {
 
 }
 
-class Config : IConfig{
-
-}
-class Result : IResult{
+interface Result {
 
 }

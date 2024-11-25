@@ -1,4 +1,5 @@
 import cmd.ExtractCmd
+import com.codeborne.selenide.Configuration.holdBrowserOpen
 import com.github.ajalt.clikt.completion.completionOption
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.core.CliktError
@@ -17,10 +18,13 @@ class App() : CliktCommand() {
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main(args: Array<String>) {
     try {
-        var app = App()
+        val app = App()
 
+        configSelenide()
+
+        val extractCmd = ExtractCmd()
         app.subcommands(
-            ExtractCmd()
+            extractCmd
         ).completionOption().main(args)
 
     } catch (e: CliktError) {
@@ -28,5 +32,10 @@ fun main(args: Array<String>) {
     }
 
 }
+
+fun configSelenide() {
+    holdBrowserOpen = true
+}
+
 
 
